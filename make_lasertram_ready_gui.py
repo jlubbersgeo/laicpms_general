@@ -4,6 +4,28 @@
 Created on Mon Apr  5 15:19:09 2021
 
 @author: jordanlubbers
+
+This script will take a folder of .csv files from the Qtegra software 
+associated with a ThermoFisher iCAP RQ ICP-MS, strip the metadata at the top,
+and place all of the raw counts per second data in one spreadsheet with a 
+column that denotes the individual sample that each row (e.g., cycle through
+the mass range) belongs to.
+
+It uses tkinter to do this in the form of a GUI where the user only has to 
+input the name of the output file in the text input area, press the button,
+and go find their folder with all the individual, raw .csv files. 
+
+
+This works well as an imported module where one can do something like this:
+
+import make_lasertram_ready_gui as ltg
+
+ltg.make_lasertram_ready()
+
+^^this will run the script and open the tkinter dialog window and only needs
+to be done once. 
+
+
 """
 
 import pandas as pd
