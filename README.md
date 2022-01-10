@@ -4,7 +4,10 @@ Raw data output from LA-ICP-MS is in the form of counts per second (cps). When i
 
 This repository is a collection of scripts that will help a LA-ICP-MS user do the following:
 - preprocess data from a ThermoFisher iCAP RQ ICP-MS and Agilent 8900 QQQ so that it is in a form that is ready for data reduction
+  - ```make_lasertram_ready_gui_agilent```, ```make_lasertram_ready_gui_thermo```, ```multifilier``` scripts
 - show hard coded Jupyter notebook examples of how to calculate concentrations after peak intervals are chosen for a given spot analysis
-- visualize standard reference material accuracy by comparison with their preferred published values
+  - ```lasercalc_python.ipynb```
 
-This repository is a work in progress and will be periodically updated. For the GUI versions of the scripts in this repository please see the [lasertram](https://github.com/jlubbersgeo/lasertram) and [lasercalc](https://github.com/jlubbersgeo/lasercalc) repositories. 
+This repository is a work in progress and will be periodically updated. For more information on our open-source laser ablation processing tools please see the [LaserTRAM-DB](https://github.com/jlubbersgeo/laserTRAM-DB) repository. 
+
+please contact Jordan Lubbers with any questions
