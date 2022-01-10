@@ -114,7 +114,8 @@ def make_lasertram_ready():
 
             all_data = pd.DataFrame()
             suffix = 'LT_ready.xlsx'
-            outpath = os.path.dirname(infiles[0]) + '/' + name + '_' + suffix
+            # outpath = os.path.dirname(infiles[0]) + '/' + name + '_' + suffix
+            outpath = '{}\{}_{}'.format(os.path.dirname(infiles[0]),name,suffix)
 
 
             for data in sorted(metadata):
@@ -178,6 +179,8 @@ def make_lasertram_ready():
     canvas1.pack()
     
     root.mainloop()
+
+
 
 
 

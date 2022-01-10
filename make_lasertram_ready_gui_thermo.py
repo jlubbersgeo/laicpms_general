@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -149,7 +150,8 @@ def make_lasertram_ready():
         
            
             suffix = 'LT_ready.xlsx'
-            outpath = os.path.dirname(infiles[0]) + '/' + name + '_' + suffix
+            # outpath = os.path.dirname(infiles[0]) + '/' + name + '_' + suffix
+            outpath = '{}\{}_{}'.format(os.path.dirname(infiles[0]),name,suffix)
         
             #concatenate all your data
         
