@@ -122,6 +122,7 @@ def make_lasertram_ready():
 
                 sample_data = data[3]
                 sample_data.insert(0,'SampleLabel',data[2])
+                sample_data.insert(0,'timestamp',data[0])
 
 
 
@@ -135,7 +136,9 @@ def make_lasertram_ready():
 
             # Create a Pandas Excel writer using XlsxWriter as the engine.
             #{'strings_to_numbers': True} remvoes 'numbers saved as text error in excel'
-            writer = pd.ExcelWriter(outpath, engine='xlsxwriter',options = {'strings_to_numbers': True})
+            writer = pd.ExcelWriter(outpath, engine='xlsxwriter',
+            engine_kwargs={'options': {'strings_to_numbers': True}}
+            )
 
             # Convert the dataframe to an XlsxWriter Excel object.
             all_data.to_excel(writer, sheet_name='Buffer',index = False)

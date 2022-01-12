@@ -141,7 +141,9 @@ def make_lasertram_ready():
             #put the ordered samplenames and filepaths in their own list
             ordered_samples = []
             ordered_files = []
+            ordered_timestamps = []
             for data in sorted(metadata):
+                ordered_timestamps.append(data[0])
                 ordered_samples.append(data[1])
                 ordered_files.append(data[2])
         
@@ -162,6 +164,7 @@ def make_lasertram_ready():
                 sample_data = make_LTspot_ready(file)
                 #insert a column with the header 'sample' and sample name in every row
                 sample_data.insert(0,'SampleLabel',sample)
+                sample_data.insert(0,'timestamp',timestamp)
                 #add blank row at the end
                 sample_data.loc[sample_data.iloc[-1].name + 1,:] = np.nan
         
@@ -176,7 +179,9 @@ def make_lasertram_ready():
         
             # Create a Pandas Excel writer using XlsxWriter as the engine.
             #{'strings_to_numbers': True} remvoes 'numbers saved as text error in excel'
-            writer = pd.ExcelWriter(outpath, engine='xlsxwriter',options = {'strings_to_numbers': True})
+            writer = pd.ExcelWriter(outpath, engine='xlsxwriter',
+            engine_kwargs={'options': {'strings_to_numbers': True}}
+            )
         
             # Convert the dataframe to an XlsxWriter Excel object.
             all_data.to_excel(writer, sheet_name='Buffer',index = False)
