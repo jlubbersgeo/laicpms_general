@@ -31,5 +31,5 @@ The ```multifiler.py``` script will create a GUI based on which type of mass spe
 the ```lasercalc_python.ipynb``` notebook contains much of the code that is in ```LaserTRAM-DB``` for calculating concentrations from data that has been normalized to an internal standard. If you are "python savvy" you may wish to go this route for determining concentrations, however it is almost always easier to use the GUI in this regard. This was created so as to enhance transparency with the software. We believe that how geochemists obtain numbers from their instruments should not be a black box, but rather a well documented and well informed series of decisions. Let this notebook help with that. 
 
 
-*Happy Processing!*
+*Happy Processing!*<br>
 -Jordan
