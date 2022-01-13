@@ -11,3 +11,25 @@ This repository is a collection of scripts that will help a LA-ICP-MS user do th
 This repository is a work in progress and will be periodically updated. For more information on our open-source laser ablation processing tools please see the [LaserTRAM-DB](https://github.com/jlubbersgeo/laserTRAM-DB) repository. 
 
 please contact Jordan Lubbers with any questions
+
+## Use
+
+### Preprocessing
+To prepocess your data for [```LaserTRAM-DB```](https://github.com/jlubbersgeo/laserTRAM-DB) it is recommended that you create a virtual environment (we prefer Anaconda). Once you have this virtual environment set up you will not have to do it again for ```LaserTRAM-DB```.
+```
+conda create -n lasertram-db python=3.7.7
+conda activate lasertram-db
+git clone https://github.com/jlubbersgeo/laicpms_general
+cd /path/to/laicpms_general
+conda install --file requirements.txt
+python multifiler.py
+```
+
+The ```multifiler.py``` script will create a GUI based on which type of mass spec your data are from and then combine all the requisite csv files into one spreadsheet such that it can be loaded into ```LaserTRAM-DB```. 
+
+### LaserCalc
+the ```lasercalc_python.ipynb``` notebook contains much of the code that is in ```LaserTRAM-DB``` for calculating concentrations from data that has been normalized to an internal standard. If you are "python savvy" you may wish to go this route for determining concentrations, however it is almost always easier to use the GUI in this regard. This was created so as to enhance transparency with the software. We believe that how geochemists obtain numbers from their instruments should not be a black box, but rather a well documented and well informed series of decisions. Let this notebook help with that. 
+
+
+*Happy Processing!*
+-Jordan
