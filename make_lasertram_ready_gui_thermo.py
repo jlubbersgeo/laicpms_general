@@ -134,7 +134,7 @@ def make_lasertram_ready():
             # go through and make a list of lists for each file that has its metadata
             # in the form [timestamp,samplename,filepath]
             metadata = []
-            for sample,file,timestamp in zip(samples,infiles,timestamps):
+            for timestamp,sample,file in zip(timestamps,samples,infiles):
                 metadata.append([timestamp,sample,file])
         
             #because the timestamp is first we can now sort this list by time
@@ -159,7 +159,7 @@ def make_lasertram_ready():
         
             #concatenate all your data
             all_data = pd.DataFrame()
-            for file,sample in zip(ordered_files,ordered_samples):
+            for file,sample,timestamp in zip(ordered_files,ordered_samples,ordered_timestamps):
         
                 sample_data = make_LTspot_ready(file)
                 #insert a column with the header 'sample' and sample name in every row
